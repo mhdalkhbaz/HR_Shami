@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HRApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    @*my css*@ 
+    <style>
+
+        .table td, .table th {
+            padding: 0px;
+        }
+            td {
+            padding: 0px;
+            font-family: revert;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .weather-2 {
+            height: 200px;
+        }
+
+        #weather-2 {
+            height: 600px;
+        }
+
+        th {
+            text-align: center;
+            font-size: 13px;
+        }
+
+
+        .content_p {
+            background: #ffffff;
+            box-shadow: 0px 3px 2px #aab2bd;
+            height: 160px;
+            padding: 2px;
+            /*margin: 3px;*/
+            float: right;
+            padding-left: 0px;
+            padding-right: 0px border-bottom: 1px double;
+            margin-bottom: 15px;
+            
+        }
+        .scrol {
+            overflow-y: scroll;
+            height: 124px;
+            width: 100%;
+        }
+
+        .content_p2 {
+            background: #ffffff;
+            box-shadow: 0px 3px 2px #aab2bd;
+            height: 160px;
+            padding: 0px;
+            margin: 3px;
+        }
+
+        .w_100 {
+            width: 100%
+        }
+
+        .red {
+            color: red
+        }
+
+        .green {
+            color: green
+        }
+
+        .emp {
+            font-size: 18px;
+            font-family: system-ui;
+        }
+
+        .emp1 {
+            font-size: 22px;
+        }
+
+        .icon {
+            background: linear-gradient(#006eff24, #00000000);
+            color: #000000;
+            font-family: system-ui;
+            text-align: center;
+            margin: 0;
+        }
+
+        .di {
+            border-bottom: 3px solid;
+            border-left: #3e3e3e1f solid;
+        }
+
+        .center {
+            text-align: center;
+            font-family: system-ui;
+            background: #d2c19a0f;
+            margin: 14px 0;
+            padding: 4px;
+            border: #a2a2a2 1px dotted;
+            border-radius: 64px 17px;
+        }
+
+
+        .close_late {
+            color: #a21919;
+            background: #0c0c0c47;
+            font-size: 20px
+        }
+
+        .late {
+            box-shadow: 10px 0px 24px #ff04046e
+        }
+
+        .goLeft {
+            float: left;
+        }
+
+        /* linear-gradient(77deg, #b78212, #00000000) */
+    </style>
+</head>
+<body lang="ar" dir="rtl"> 
+    @*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HRApp</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>*@
+    <div class="  ">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - HRApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>   error charts
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+</body>
+</html>
