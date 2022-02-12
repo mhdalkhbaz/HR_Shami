@@ -9,9 +9,14 @@ using HRApp.Data;
 using HRApp.Models;
 using Newtonsoft.Json;
 using DevExtreme;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HRApp.Controllers
 {
+    [Authorize]
+
+
     public class vi_emp_this_monthController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,41 +26,60 @@ namespace HRApp.Controllers
             _context = context;
         }
 
+        //private readonly ILogger<vi_emp_this_monthController> _logger;
+
+        //public vi_emp_this_monthController(ILogger<vi_emp_this_monthController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+
+
         // GET: vi_emp_this_month
         public async Task<IActionResult> Live(DateTime? SearchString)
         {
 
 
-      
+
 
             var BranchName = "";
 
-            var Branches1 = await _context.vi_emp_this_month.OrderBy(x => x.depName).Where(x =>x.depName != "Null").Where(x => x.depId == 1).Select(x => x.depName).ToListAsync();
-            var Branches2 = await _context.vi_emp_this_month.OrderByDescending(x => x.depName).Where(x =>x.depName != "Null").Where(x => x.depId == 2).Select(x => x.depName).ToListAsync();
+            var Branches1 = await _context.vi_emp_this_month.OrderBy(x => x.depName).Where(x => x.depName != "Null").Where(x => x.depId == 1).Select(x => x.depName).ToListAsync();
+            var Branches2 = await _context.vi_emp_this_month.OrderByDescending(x => x.depName).Where(x => x.depName != "Null").Where(x => x.depId == 2).Select(x => x.depName).ToListAsync();
 
 
             var Employees = _context.vwEmp.Where(y => y.EndWork.Year != 1901).Count();
+            ViewBag.Employees = 0;
             ViewBag.Employees = Employees;
 
 
 
-            var EmployeesMorning= _context.vi_emp_this_month.Where(y => y.depId != 1).Where(y => y.DayDate == DateTime.Now.Date).Where(y => y.InHour.Hour < 13).Count();
+            var EmployeesMorning = _context.vi_emp_this_month.Where(y => y.depId != 1).Where(y => y.DayDate == DateTime.Now.Date).Where(y => y.InHour.Hour < 13).Count();
             ViewBag.EmployeesMorning = 20;
 
 
 
-            var EmployeesEvning = _context.vi_emp_this_month.Where(y => y.depId != 1).Where(y => y.DayDate == DateTime.Now.Date).Where(y => y.InHour.Hour > 13 ).Count();
+            var EmployeesEvning = _context.vi_emp_this_month.Where(y => y.depId != 1).Where(y => y.DayDate == DateTime.Now.Date).Where(y => y.InHour.Hour > 13).Count();
             ViewBag.EmployeesEvning = 28;
 
+ 
 
 
 
-
-            var StartWorkEmp =   _context.vwEmp.Where(y => y.StartWork.Year == DateTime.Now.Year).Where(y => y.StartWork.Month == DateTime.Now.Month).Count();
+            var StartWorkEmp = _context.vwEmp.Where(y => y.StartWork.Year == DateTime.Now.Year).Where(y => y.StartWork.Month == DateTime.Now.Month).Count();
             var EndWorkEmp = _context.vwEmp.Where(y => y.EndWork.Year == DateTime.Now.Year).Where(y => y.EndWork.Month == DateTime.Now.Month).Count();
 
+            if (StartWorkEmp != null ) { 
             ViewBag.StartWorkEmp = StartWorkEmp;
-            ViewBag.EndWorkEmp = EndWorkEmp;
+            }
+            else
+            {ViewBag.StartWorkEmp = 0;  }
+            if (EndWorkEmp != null)
+            {
+                ViewBag.EndWorkEmp = EndWorkEmp;
+            }
+            else
+            { ViewBag.EndWorkEmp = 0; }
 
 
             //ViewBag.chart_EmpLate = await _context.vi_emp_this_month.Where(y => y.DayDate.Month == 1 ).Where(y => y.State == 1).Select(x => new ViewContent
@@ -167,6 +191,7 @@ namespace HRApp.Controllers
                                             OrderByDescending(o => o.LateHour).
                                             Take(5).
                 ToListAsync();
+             
 
             ViewBag.LateEmp = LateHourList.ToArray();
 
@@ -184,10 +209,13 @@ namespace HRApp.Controllers
                                             OrderByDescending(o => o.OverTime1).
                                             Take(5).
                 ToListAsync();
-
+            if(pluseHourList != null) { 
             ViewBag.OverTimeEmp = pluseHourList.ToArray();
-
-
+            }
+            else
+            {
+                ViewBag.OverTimeEmp = " ";
+            }
 
             //List<DataPoint> dataPoints = new List<DataPoint>();
 

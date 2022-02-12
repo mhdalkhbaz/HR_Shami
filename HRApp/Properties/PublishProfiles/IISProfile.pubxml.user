@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhffXzXMKQEumt3khKwKdYQAAAAACAAAAAAAQZgAAAAEAACAAAABnKWp7yMnxtYOjKtNlnNFBWrqBwo2SVsMKqI23o8bM+wAAAAAOgAAAAAIAACAAAAAuE4NjanYD6JTxTYJdmnOWJuceyRYXktNuDc5RblDoZiAAAABCBE7PFpdTBDteCAA9HvRRQZhMfv/r9MpaYdhKVX00bkAAAAA7zy5K0W7e0BrV9uPoVl5bhMR6jEoqxq0f0OJkGeqzEBNSRwVf5PsEVGiyP6Q+MJWcfAxwyjoJacyKrHQ6PxHU</EncryptedPassword>
+    <History>False|2022-01-30T12:16:04.0610837Z;False|2022-01-30T14:09:13.6104705+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ApplicationDbContext">
+      <Value>Server=192.168.2.98%3bDatabase=AmnSalary001%3bUser Id=sa%3b Password=123%3bTrusted_Connection=False%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="SQLServerConnectionStr">
+      <Value>Server=192.168.2.98%3bDatabase=AmnSalary001%3bUser Id=sa%3b Password=123%3bTrusted_Connection=False%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

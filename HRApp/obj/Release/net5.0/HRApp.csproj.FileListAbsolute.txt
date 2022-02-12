@@ -160,3 +160,12 @@ D:\hr_E\HRApp\HRApp\obj\Release\net5.0\HRApp.dll
 D:\hr_E\HRApp\HRApp\obj\Release\net5.0\ref\HRApp.dll
 D:\hr_E\HRApp\HRApp\obj\Release\net5.0\HRApp.pdb
 D:\hr_E\HRApp\HRApp\obj\Release\net5.0\HRApp.genruntimeconfig.cache
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\hr_E\HRApp\HRApp\obj\Release\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

@@ -4,7 +4,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>\\192.168.2.96\www2\hr.local</_PublishTargetUrl>
-    <History>True|2022-01-23T08:59:11.9399365Z;True|2022-01-23T10:06:34.2213711+02:00;False|2022-01-23T10:05:15.2550131+02:00;False|2022-01-22T16:06:00.7551304+02:00;False|2022-01-22T16:04:58.5754964+02:00;False|2022-01-22T16:04:40.5366214+02:00;</History>
+    <_PublishTargetUrl>\\192.168.2.96\inetpub\wwwroot\hr</_PublishTargetUrl>
+    <History>True|2022-02-07T13:27:12.0017913Z;True|2022-02-07T14:47:15.8270593+02:00;True|2022-02-06T11:58:46.3609514+02:00;True|2022-02-05T13:00:20.6546209+02:00;False|2022-02-05T12:59:36.0223044+02:00;True|2022-02-05T12:09:40.4829636+02:00;True|2022-02-03T13:13:47.4603947+02:00;True|2022-01-30T15:43:31.2520784+02:00;True|2022-01-30T15:42:02.6249083+02:00;True|2022-01-30T15:37:55.3985597+02:00;True|2022-01-30T14:17:26.3081487+02:00;True|2022-01-30T13:57:50.5949170+02:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ApplicationDbContext">
+      <Value>Server=192.168.2.98%3bDatabase=AmnSalary001%3bUser Id=sa%3b Password=123%3bTrusted_Connection=False%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="SQLServerConnectionStr">
+      <Value>Server=192.168.2.98%3bDatabase=AmnSalary001%3bUser Id=sa%3b Password=123%3bTrusted_Connection=False%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="HRApp.Data.ApplicationDbContext">
+      <Value>Server=192.168.2.98%3bDatabase=AmnSalary001%3bUser Id=sa%3b Password=123%3bTrusted_Connection=False%3bMultipleActiveResultSets=true</Value>
+    </EFMigrations>
+  </ItemGroup>
 </Project>
